@@ -33,6 +33,9 @@ class Game:
         return self.how_many_players >= 2
 
     def add(self, player):
+        if self.how_many_players > MAX_PLAYERS:
+            raise Exception("Cannot Add Any More Players")
+
         self.players.append(player)
         self.places[self.how_many_players] = 0
         self.purses[self.how_many_players] = 0

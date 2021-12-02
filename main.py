@@ -18,6 +18,7 @@ if __name__ == '__main__':
     game.add(cordy)
 
     while True:
+        current_player = game.current_player
         game.player_turn()
 
         can_answer_question = game.can_player_answer_q()
@@ -27,6 +28,5 @@ if __name__ == '__main__':
             no_winner_yet = game.wrong_answer()
 
         if not no_winner_yet:
-            winner = game.current_player
-            print(f"{game.players[winner]} Wins!")
+            print(f"{game.players[current_player]} Wins!")
             break
